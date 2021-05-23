@@ -1,0 +1,82 @@
+.card-box {
+    position: relative;
+
+    &__avatar {
+        width: auto;
+        height: 100px;
+        border-radius: 50%;
+        border: 2px solid white;
+
+        & img {
+            width: auto;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid white;
+            transition: .3s all ease;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    &__review {
+        background-color: $body-color;
+        box-shadow: $box-shadow-active;
+        transition: .2s all;
+
+        &:hover {
+            background-color: $primary-color;
+            color: $white-color;
+
+        }
+
+        &:hover .paragraph {
+            color: inherit;
+        }
+    }
+
+    &__content {
+        display: flex;
+        padding: 4rem;
+        justify-content: space-between;
+
+        @include respond(phone) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    &__text {
+        padding-left: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        @include respond(phone) {
+            padding-left: 0;
+        }
+
+        h3 {
+            font-size: 2.7rem;
+            text-transform: capitalize;
+        }
+    }
+
+    &__start {
+        font-size: 3rem;
+        color: $color-start;
+        padding: 1rem 0;
+    }
+
+    &__name,
+    &__position {
+        font-size: 1.8rem;
+    }
+
+    &__name {
+        font-weight: 900;
+    }
+}

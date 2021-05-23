@@ -1,0 +1,47 @@
+.section-about {
+    @include respond(phone) {
+        padding: 10rem 0;
+    }
+}
+
+.ico-travel {
+    @include respond(phone) {
+        padding-bottom: 10rem;
+    }
+}
+
+.destination {
+    & .content-card {
+        justify-content: center;
+    }
+
+    & .car-dest {
+        @include respond(phone) {
+            width: 80%;
+        }
+    }
+}
+
+.section-review {
+    position: relative;
+    padding: 12rem 0;
+}
+
+.book {
+    background-image: linear-gradient(105deg, rgba($secundary-color-linght, 1) 0%, rgba($secundary-color-linght, 1) 50%, transparent 50%), url(../img/photo-plaza-real.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 4rem;
+
+    & .book-bg {
+        @include respond(tab-port) {
+            width: 100%;
+        }
+    }
+
+    @include respond(tab-port) {
+        background-image: linear-gradient(rgba($secundary-color-linght, 1), rgba($secundary-color-linght, 1));
+        padding: 1rem;
+    }
+
+}

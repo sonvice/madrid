@@ -1,0 +1,48 @@
+.icon {
+    @include respond(phone) {
+        width: 100%;
+    }
+}
+
+
+.icon-basic {
+
+    &:hover i,
+    &:hover h4 {
+        text-shadow: $box-shadow-active;
+        transform: translateY(-0.3rem);
+    }
+
+    & i {
+
+        font-size: 10rem;
+        background-image: linear-gradient(to right, $black-blue-color, $primary-color);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        position: relative;
+        transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+        &::after {
+            content: '';
+            background-image: url(../img/forma.svg);
+            opacity: .5;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+    }
+
+    & h4 {
+        font-size: 2.4rem;
+        font-weight: 400;
+        color: $black-blue-color;
+        text-transform: uppercase;
+        transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+}

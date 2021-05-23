@@ -1,0 +1,96 @@
+/**
+* BREAKPOINT MIXINGS
+*/
+@mixin respond($breakpoint) {
+    @if $breakpoint==phone {
+        @media (max-width: 37.5em) {
+            @content
+        }
+
+        ; //600px
+    }
+
+    @if $breakpoint==tab-port {
+        @media (max-width: 56.25em) {
+            @content
+        }
+
+        ; //900px
+    }
+}
+
+
+
+@mixin xs {
+    @media (max-width: #{$screen-xs-max}) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (min-width: #{$screen-sm-min}) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (min-width: #{$screen-md-min}) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+
+@mixin gridGenerator($breakpoint, $offset: false) {
+
+    /*------------------------------------*\
+    # COLUMNS
+    \*------------------------------------*/
+    @for $column from 1 to $columns-number+1 {
+        .col-#{$breakpoint}-#{$column} {
+            // flex-basis: percentage($column / $columns-number);
+            width: (100% * $column) / $columns-number;
+        }
+    }
+
+    /*------------------------------------*\
+    # OFFSET COLUMNS
+    \*------------------------------------*/
+    @if $offset {
+        @for $column from 1 to $columns-number+1 {
+            .col-#{$breakpoint}-offset-#{$column} {
+                margin-left: (100% * $column) / $columns-number;
+            }
+        }
+    }
+}
+
+//Title secondary
+@mixin titleSecondary($color, $bg-color) {
+    font-size: 3rem;
+    font-weight: 900;
+    color: $color;
+    position: relative;
+    width: max-content;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+
+    & span {
+        display: block;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 80%;
+        height: 2px;
+        background-color: $bg-color;
+    }
+}

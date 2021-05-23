@@ -1,0 +1,144 @@
+.navigation {
+
+    &__buttom {
+        width: 6rem;
+        height: 6rem;
+        position: fixed;
+        top: 6rem;
+        right: 6rem;
+        background-color: $white-color;
+        border-radius: 50%;
+        z-index: 2000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        cursor: pointer;
+        box-shadow: $box-shadow-active;
+
+        @include respond(tab-port) {
+            right: 2rem;
+            top: 2rem;
+        }
+    }
+
+    &__icon:not(:last-child) {
+        margin-bottom: .6rem;
+    }
+
+    &__icon {
+        position: relative;
+        transform-origin: center;
+        width: 3rem;
+        height: 2px;
+        background-color: $color-grey-dark;
+        display: inline-block;
+        transition: .2s all;
+    }
+
+    &__buttom:hover &__icon:last-child {
+        top: .2rem;
+
+    }
+
+    &__buttom &__icon:nth-child(2) {
+        opacity: 1;
+    }
+
+    &__buttom:hover &__icon:first-child {
+        top: -.2rem;
+
+    }
+
+    //Función
+
+    &__buttom.active-bar &__icon:first-child {
+        transform: rotate(135deg) translate(0.6rem, -0.6rem);
+        top: -.2rem;
+
+    }
+
+    &__buttom.active-bar &__icon:last-child {
+        transform: rotate(-135deg) translate(0.8rem, 0.8rem);
+        top: .2rem;
+    }
+
+    &__buttom.active-bar &__icon:nth-child(2) {
+        opacity: 0;
+    }
+
+    &__background {
+        width: 5rem;
+        height: 5rem;
+        position: fixed;
+        background-image: radial-gradient($primary-color, $black-blue-color);
+        z-index: 999;
+        top: 6.5rem;
+        right: 6.5rem;
+        border-radius: 50%;
+        transition: .5s all ease-out;
+
+        @include respond(tab-port) {
+            right: 2.5rem;
+            top: 2.5rem;
+        }
+    }
+
+    &__nav {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1500;
+        width: 40%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s all cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
+
+    &__list {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        list-style: none;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+    }
+
+    &__link {
+
+        &:link,
+        &:visited {
+            display: inline-block;
+            font-size: 3rem;
+            font-weight: 300;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $white-color;
+            background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $white-color 50%);
+            background-size: 250%;
+            transition: 1s all cubic-bezier(0.23, 1, 0.32, 1);
+            ;
+        }
+
+        &:hover {
+            background-position: 100%;
+            color: $black-blue-color;
+        }
+    }
+}
+
+//Funcion menu
+.nav-active {
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+    transition: .6s all ease-out;
+}
+
+.bg-active {
+    transform: scale(80);
+    transition: .5s all ease-out;
+}

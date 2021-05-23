@@ -1,0 +1,56 @@
+.card {
+    position: relative;
+    transition: all .3s;
+    cursor: pointer;
+    &:hover {
+        box-shadow: $box-shadow-active;
+        transform: translateY(-1rem) scale(1.05);
+    }
+
+    &:hover img {
+        transform: scale(1.1);
+
+    }
+
+    &__boximg {
+        position: relative;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            display: block;
+            transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+
+
+        &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to bottom, transparent, rgba($black-blue-color, 1));
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    &__text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 2rem;
+        width: 100%;
+        pointer-events: none;
+    }
+
+    & h3 {
+        font-size: 2.7rem;
+        color: $white-color;
+    }
+
+    &__paragraph {
+        font-size: $default-font-size;
+        color: $white-color;
+    }
+}

@@ -1,0 +1,89 @@
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    line-height: 1.4;
+
+}
+
+.heading-primary {
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+    color: $white-color;
+    padding: 1rem;
+
+    &--main {
+        display: block;
+        letter-spacing: 2rem;
+        font-size: 5rem;
+        font-weight: 700;
+        animation: moveLeft 1s ease;
+
+        @include respond(tab-port) {
+            letter-spacing: 1rem;
+            font-size: 4rem;
+        }
+    }
+
+    &--sub {
+        display: block;
+        font-size: 2.7rem;
+        font-weight: 400;
+        letter-spacing: 1.74rem;
+        animation: moveRight 1s ease;
+
+        @include respond(tab-port) {
+            letter-spacing: .5rem;
+            font-size: 2.5rem;
+        }
+    }
+}
+
+.title-secondary {
+    @include titleSecondary($black-blue-color, $primary-color);
+
+    &--video {
+        @include titleSecondary($white-color, $secondary-color);
+        margin-bottom: 6rem;
+        margin-left: 15px;
+    }
+
+    @include respond(phone) {
+        width: fit-content;
+    }
+
+    & span {
+        @include respond(phone) {
+            display: inline-block;
+        }
+    }
+}
+
+.paragraph {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: $black-blue-color;
+    margin-bottom: 2.5rem;
+
+    &-bold {
+        font-weight: 900;
+    }
+}
+
+.section-about:target h2,
+.destination:target h2,
+.section-review:target h2,
+.section-form:target h2 {
+    // text-decoration: underline;
+    // text-decoration-thickness: 2.4rem;
+    // text-decoration-color: rgba($secondary-color, 1);
+    // text-decoration-skip-ink: none;
+    // text-underline-offset: -3.5rem;
+    background-image: linear-gradient(to left, $primary-color, $black-blue-color);
+    -webkit-background-clip: text;
+    color: transparent;
+    background-clip: text;
+}
+
+.section-review:target h2 {
+    color: $body-color;
+}

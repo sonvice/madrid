@@ -1,0 +1,26 @@
+.section-form.py-lg#book
+    .container 
+        .book.border-white 
+            .row
+                .col-md-6.book-bg 
+                    .book__input
+                        .form
+                            h2.title-secondary.mb-medium START BOOK NOW
+                            .form__group 
+                                input.form__input(type="text" placeholder="Full Name" required)#name
+                                label(for="name").form__label Full Name 
+                            .form__group 
+                                input.form__input(type="email" placeholder="Email Adress" required)#email
+                                label(for="email").form__label Ëmail Adress
+                            .form__group 
+                                .form__radio-group
+                                    input.form__radio-input(type="radio" for="small" name="size")#small
+                                    label(for="small").form__radio-label Small Tour group
+                                        span.form__radio-buttom    
+                                .form__radio-group
+                                    input.form__radio-input(type="radio" for="large" name="size")#large
+                                    label(for="large").form__radio-label Large tour group
+                                        span.form__radio-buttom
+                            .form__group.mt-medium  
+                                a.btn.btn-secondary(href="#") send 
+                            

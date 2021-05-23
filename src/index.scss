@@ -1,0 +1,34 @@
+//Utils
+@import 'sass/utils/variables';
+@import 'sass/utils/mixins';
+
+//Base
+@import'sass/base/animaciones';
+@import'sass/base/base';
+@import 'sass/base/normalize';
+@import 'sass/base/typography';
+@import 'sass/base/utilities';
+
+//layout
+@import 'sass/layout/footer';
+@import 'sass/layout/grid';
+@import 'sass/layout/header';
+@import 'sass/layout/navigation';
+
+
+//Components 
+@import'sass/components/arrow';
+@import'sass/components/button-link';
+@import'sass/components/button';
+@import'sass/components/card-review';
+@import'sass/components/card';
+@import'sass/components/form';
+@import'sass/components/ico-travel';
+@import'sass/components/img-about';
+@import'sass/components/popup';
+@import'sass/components/video';
+
+
+
+//Pages
+@import'sass/pages/home';

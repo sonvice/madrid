@@ -1,0 +1,57 @@
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to bottom right, rgba($primary-color, 0.9), rgba($secondary-color, 0.8)), url(../img/header-img.jpg);
+    background-size: cover;
+    position: relative;
+    background-position: top center;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-bottom: 90px solid $body-color;
+        border-left: 50vw solid transparent;
+
+        @include respond(tab-port) {
+            border-bottom: 60px solid $body-color;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom: 90px solid $body-color;
+        border-right: 50vw solid transparent;
+
+        @include respond(tab-port) {
+            border-bottom: 60px solid $body-color;
+        }
+    }
+
+    &__logo {
+        font-weight: 900;
+        font-size: 4rem;
+        color: $white-color;
+        text-transform: uppercase;
+        position: absolute;
+        left: 4rem;
+        top: 4rem;
+
+        @include respond(tab-port) {
+            left: 2rem;
+            top: 2rem;
+        }
+    }
+
+    &__text-box {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
